@@ -12,7 +12,7 @@ jobs:
       - name: Update CSV
         run: rm -f code-scanning-query-list.csv && \
           gh run download 3139150391 -R github/codeql -n code-scanning-query-list && \
-          now=$(date +"%Y_%m_%d")
+          now=$(date +"%Y_%m_%d") && \
           cp code-scanning-query-list.csv ./archive/$now-code-scanning-query-list.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
