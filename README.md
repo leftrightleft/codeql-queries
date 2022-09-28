@@ -1,3 +1,8 @@
+# CodeQL Query List
+This auto-generated list contains the most recent list of queries for CodeQL.  
+
+Update Date: 09/27/2022 7:32 pm
+Download the file here: link to file
 
 |Query filename|Suite|Query name|Query ID|Kind|Severity|Precision|Tags|
 |---|---|---|---|---|---|---|---|
