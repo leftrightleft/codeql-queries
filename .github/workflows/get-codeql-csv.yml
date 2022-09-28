@@ -5,10 +5,18 @@ on:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 8 * * *'
 jobs:
-  comment:
+  get-csv:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: Update CSV
       - run: gh run download 3139150391 -R github/codeql -n code-scanning-query-list && ls -al
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit CSV
+        run: |
+          git config --global user.name 'CSV Bot (bleep bleep bloop)'
+          git config --global user.email 'csv-bot@users.noreply.github.com'
+          git commit -am "Automated CSV"
+          git push
         
