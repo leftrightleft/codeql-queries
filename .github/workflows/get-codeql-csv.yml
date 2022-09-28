@@ -8,7 +8,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: gh run download 3139150391 -R github/codeql -n code-scanning-query-list && ls-al
+      - run: gh run download 3139150391 -R github/codeql -n code-scanning-query-list && ls -al
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
