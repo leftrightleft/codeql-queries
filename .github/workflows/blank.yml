@@ -1,0 +1,13 @@
+name: Get CodeQL Query CSV
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 8 * * *'
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh run download 3139150391 -R github/codeql -n code-scanning-query-list
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
